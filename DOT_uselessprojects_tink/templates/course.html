@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Available Courses</h2>
+<ul>
+    {% for course in courses %}
+    <li>
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <form action="/enroll" method="post">
+            <input type="hidden" name="course_id" value="{{ course.id }}">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Enroll</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

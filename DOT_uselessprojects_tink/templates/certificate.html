@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Certificate of Completion .</h2>
+<p>Congratulations! You have successfully completed {{ course.title }}!</p>
+
+<!-- Generate a humorous certificate image -->
+<img src="{{ url_for('static', filename='certificate.png') }}" alt="Certificate">
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lecture Notes for {{ course.title }}</h2>
+<p>Here are the secret tips on how to effectively procrastinate...</p>
+
+<!-- Add humorous or relevant content for each course -->
+{% if course.title == 'Mastering Laziness' %}
+    <p>This is the ultimate guide to doing absolutely nothing with style. Sit back, relax, and let life flow by.</p>
+{% elif course.title == 'Procrastination 101' %}
+    <p>Learn the art of putting things off indefinitely. Remember, tomorrow is just as good as today!</p>
+{% endif %}
+
+<a href="{{ url_for('quiz', course_id=course.id) }}">Take the Quiz</a>
+{% endblock %}

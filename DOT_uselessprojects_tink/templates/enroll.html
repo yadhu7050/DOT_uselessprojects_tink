@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Enrollment Form</h2>
+<form method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

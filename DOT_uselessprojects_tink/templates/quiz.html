@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Quiz for {{ course.title }}</h2>
+
+<!-- Simple form-based quiz for certification -->
+<form action="{{ url_for('certificate', course_id=course.id) }}" method="get">
+    <p>Question 1: What is the best way to do nothing?</p>
+    <input type="radio" id="answer1" name="q1" value="a">
+    <label for="answer1">A. Sit back and relax</label><br>
+    <input type="radio" id="answer2" name="q1" value="b">
+    <label for="answer2">B. Avoid everything</label><br>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
