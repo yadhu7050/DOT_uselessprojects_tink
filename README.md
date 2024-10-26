@@ -39,7 +39,6 @@ For Software:
 Download the files and run in vs code terminal
 
 # Run
-python populate_db.py
 python app.py
 
 ### Project Documentation
