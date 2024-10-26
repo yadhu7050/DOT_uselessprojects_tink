@@ -113,7 +113,7 @@ Operating System: Linux for optimal performance.
 ## Team Contributions
 - Sayanandh Aneesh: Front End Develpment
 - Yadhu Krishnan: Back End Development
-- [Name 3]: Documentation,Connectivity
+- Rincy Robert: Documentation,Connectivity
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
