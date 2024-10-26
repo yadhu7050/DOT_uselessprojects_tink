@@ -2,13 +2,50 @@
 
 {% block content %}
 <h2>Lecture Notes for {{ course.title }}</h2>
-<p>Here are the secret tips on how to effectively procrastinate...</p>
 
-<!-- Add humorous or relevant content for each course -->
 {% if course.title == 'Mastering Laziness' %}
-    <p>This is the ultimate guide to doing absolutely nothing with style. Sit back, relax, and let life flow by.</p>
+    <h3>A Guide to Achieving Maximum Relaxation and Minimum Effort</h3>
+    <p>Welcome to <em>Mastering Laziness</em>, where we believe the couch is the ultimate throne, and every effort should be avoided at all costs. In this course, you'll learn how to embrace your inner sloth. Topics include:</p>
+    <ul>
+        <li><b>Finding the Perfect Couch Groove:</b> Because no seat is truly yours until it has a personal indentation.</li>
+        <li><b>Advanced Remote Control Techniques:</b> Learn to minimize thumb movement while maximizing channel coverage. Bonus tips on never losing the remote by simply refusing to let it leave your hand.</li>
+        <li><b>Selective Listening and Evasion Tactics:</b> How to avoid conversations and chores by pretending you didn't hear.</li>
+        <li><b>Mastering the Art of the Afternoon Nap:</b> Not just for toddlers! Discover the sweet spot between 2-hour and 5-hour "power naps" to ensure you’re still tired enough to sleep through the night.</li>
+    </ul>
+    <p>Homework? Absolutely not. We believe in relaxation as a 24/7 commitment. So, sit back, prop your feet up, and get ready to learn the true art of nothingness!</p>
+
 {% elif course.title == 'Procrastination 101' %}
-    <p>Learn the art of putting things off indefinitely. Remember, tomorrow is just as good as today!</p>
+    <h3>An Introductory Course on Putting Things Off Efficiently</h3>
+    <p>Welcome to <em>Procrastination 101</em>, where the motto is “Why do it today when you can do it… eventually?” This course is a deep dive into the refined, timeless art of avoiding tasks. Key concepts include:</p>
+    <ul>
+        <li><b>The Magic of the Last Minute:</b> Understand why waiting until the eleventh hour unleashes your <em>true potential</em>. After all, “under pressure” is just another word for “optimal productivity.”</li>
+        <li><b>Scrolling in Perpetuity:</b> Learn how social media, online videos, and infinite memes can provide endless justifications for doing absolutely nothing productive.</li>
+        <li><b>Mastering Excuses:</b> Develop a robust collection of reasons for why you “just haven’t gotten to it yet.” Includes bonus excuses like “I work better under pressure” and “I just need to get into the right headspace.”</li>
+        <li><b>“Urgent” Low-Priority Tasks:</b> Become an expert at suddenly finding minor, inconsequential jobs (like organizing a drawer) to avoid your real responsibilities.</li>
+    </ul>
+    <p>Assignments? We encourage you to start them at the end of the semester… if at all. Remember: the only thing that’s truly urgent is delaying tasks effectively!</p>
+
+{% elif course.title == 'The Art of Idling' %}
+    <h3>Secrets of Effective Lounging and Slow Living</h3>
+    <p>Welcome to <em>The Art of Idling</em>! Here, we believe in the joys of doing nothing with an unparalleled level of sophistication. Our curriculum focuses on embracing life in the slowest, most languid way possible. Topics include:</p>
+    <ul>
+        <li><b>Choosing the Perfect Lounging Spot:</b> A tutorial on assessing the ideal softness, shade, and angle for a truly relaxing position.</li>
+        <li><b>The Five Stages of Sitting Down:</b> From “just resting” to “I’m practically asleep,” learn how to ease into a perfectly languorous posture.</li>
+        <li><b>The Power of Mindless Staring:</b> Stare into space with intentional purpose, whether you’re looking out the window or gazing at the ceiling. Pro tips on using this technique to appear “deep in thought.”</li>
+        <li><b>How to Appear Busy While Doing Absolutely Nothing:</b> Perfect your skills in pretending to be preoccupied when you’re actually enjoying a state of pure idleness.</li>
+    </ul>
+    <p>Class participation is optional, and the only prerequisite is an appreciation for life’s slow pace. Welcome to the ultimate lounging experience—your first step to a slower, softer world!</p>
+
+{% elif course.title == 'The Science of Doing Nothing' %}
+    <h3>Why Sometimes Doing Nothing is the Best Choice</h3>
+    <p>Welcome to <em>The Science of Doing Nothing</em>, where we’ll explore the philosophy behind complete inactivity and uncover the many benefits of a life without action. This course covers:</p>
+    <ul>
+        <li><b>The Zen of Zero Effort:</b> Understand why taking no action is sometimes the most profound response. This module includes guided “doing-nothing” sessions (just show up and… don’t do anything).</li>
+        <li><b>Nature vs. Nurture (The Nurture of Doing Nothing):</b> Learn how inactivity can lead to personal growth, including tips on avoiding tasks while improving mindfulness and self-awareness.</li>
+        <li><b>Resistance to Productivity:</b> A step-by-step guide to developing a firm anti-productivity mindset. Includes role-play scenarios where you resist suggestions to “do something.”</li>
+        <li><b>Selective Conservation of Energy:</b> Master the art of only expending effort when absolutely necessary. Why lift a finger if you don’t have to?</li>
+    </ul>
+    <p>No assignments, no group projects, and certainly no presentations. Your presence (or absence) is all that’s required. Embrace the freedom of doing less—and doing it well.</p>
 {% endif %}
 
 <a href="{{ url_for('quiz', course_id=course.id) }}">Take the Quiz</a>

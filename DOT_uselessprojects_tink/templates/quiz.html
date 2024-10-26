@@ -3,13 +3,62 @@
 {% block content %}
 <h2>Quiz for {{ course.title }}</h2>
 
-<!-- Simple form-based quiz for certification -->
+<!-- Enhanced form-based quiz with more questions and answer options -->
 <form action="{{ url_for('certificate', course_id=course.id) }}" method="get">
+    <!-- Question 1 -->
     <p>Question 1: What is the best way to do nothing?</p>
-    <input type="radio" id="answer1" name="q1" value="a">
-    <label for="answer1">A. Sit back and relax</label><br>
-    <input type="radio" id="answer2" name="q1" value="b">
-    <label for="answer2">B. Avoid everything</label><br>
+    <input type="radio" id="answer1a" name="q1" value="a">
+    <label for="answer1a">A. Sit back and relax</label><br>
+    <input type="radio" id="answer1b" name="q1" value="b">
+    <label for="answer1b">B. Avoid everything</label><br>
+    <input type="radio" id="answer1c" name="q1" value="c">
+    <label for="answer1c">C. Find a comfortable couch and stay there</label><br>
+    <input type="radio" id="answer1d" name="q1" value="d">
+    <label for="answer1d">D. Just close your eyes and hope for the best</label><br><br>
+
+    <!-- Question 2 -->
+    <p>Question 2: What is the optimal time to start an assignment?</p>
+    <input type="radio" id="answer2a" name="q2" value="a">
+    <label for="answer2a">A. One hour before the deadline</label><br>
+    <input type="radio" id="answer2b" name="q2" value="b">
+    <label for="answer2b">B. Tomorrow (maybe)</label><br>
+    <input type="radio" id="answer2c" name="q2" value="c">
+    <label for="answer2c">C. Never—it will sort itself out</label><br>
+    <input type="radio" id="answer2d" name="q2" value="d">
+    <label for="answer2d">D. Only after all distractions have been exhausted</label><br><br>
+
+    <!-- Question 3 -->
+    <p>Question 3: When confronted with a challenging task, what is your first response?</p>
+    <input type="radio" id="answer3a" name="q3" value="a">
+    <label for="answer3a">A. Take a nap and revisit it later (or never)</label><br>
+    <input type="radio" id="answer3b" name="q3" value="b">
+    <label for="answer3b">B. Delegate it to someone else</label><br>
+    <input type="radio" id="answer3c" name="q3" value="c">
+    <label for="answer3c">C. Google ways to avoid it</label><br>
+    <input type="radio" id="answer3d" name="q3" value="d">
+    <label for="answer3d">D. Pretend you didn’t hear anything</label><br><br>
+
+    <!-- Question 4 -->
+    <p>Question 4: What is the key to a successful lazy day?</p>
+    <input type="radio" id="answer4a" name="q4" value="a">
+    <label for="answer4a">A. Snacks within arm’s reach</label><br>
+    <input type="radio" id="answer4b" name="q4" value="b">
+    <label for="answer4b">B. Phone charged and within reach</label><br>
+    <input type="radio" id="answer4c" name="q4" value="c">
+    <label for="answer4c">C. Minimal movement and maximum comfort</label><br>
+    <input type="radio" id="answer4d" name="q4" value="d">
+    <label for="answer4d">D. All of the above (obviously!)</label><br><br>
+
+    <!-- Question 5 -->
+    <p>Question 5: How do you handle people asking you to do things?</p>
+    <input type="radio" id="answer5a" name="q5" value="a">
+    <label for="answer5a">A. Smile, nod, and ignore</label><br>
+    <input type="radio" id="answer5b" name="q5" value="b">
+    <label for="answer5b">B. Make vague promises to “get to it”</label><br>
+    <input type="radio" id="answer5c" name="q5" value="c">
+    <label for="answer5c">C. Develop a sudden interest in an unrelated task</label><br>
+    <input type="radio" id="answer5d" name="q5" value="d">
+    <label for="answer5d">D. Find a hiding spot</label><br><br>
 
     <button type="submit">Submit</button>
 </form>
