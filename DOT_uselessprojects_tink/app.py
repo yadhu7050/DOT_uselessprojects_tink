@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
 from db import db  # Import db from db.py
 from models import Course, Enrollment
-from flask import send_file
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
+import os
+
 app = Flask(__name__)
 
 # Configure the SQLite database
@@ -22,7 +23,6 @@ def courses():
     all_courses = Course.query.all()
     return render_template('course.html', courses=all_courses)
 
-# Enroll route which redirects to the lectures page after successful enrollment
 @app.route('/enroll', methods=['POST'])
 def enroll():
     name = request.form.get('name')
@@ -34,7 +34,6 @@ def enroll():
     db.session.commit()
     return redirect(url_for('lecture', course_id=course_id))
 
-# Lecture page to show content after enrolling
 @app.route('/lecture/<int:course_id>')
 def lecture(course_id):
     course = Course.query.get(course_id)
@@ -44,7 +43,6 @@ def lecture(course_id):
 
     return render_template('lecture.html', course=course)
 
-# Quiz route (for later implementation)
 @app.route('/quiz/<int:course_id>')
 def quiz(course_id):
     course = Course.query.get(course_id)
@@ -53,30 +51,34 @@ def quiz(course_id):
         return "Course not found", 404
 
     return render_template('quiz.html', course=course)
+
+@app.route('/certificate/<int:course_id>')
 @app.route('/certificate/<int:course_id>')
 def certificate(course_id):
-    course = Course.query.get_or_404(course_id)  # Returns 404 if course is not found
+    course = Course.query.get_or_404(course_id)
 
-    certificate_template = 'static/certificate_template.png'
+    # Construct the absolute path for the certificate template
+    certificate_template = os.path.join(app.root_path, 'static', 'certificate_template.png')
+    print(f"Certificate template path: {certificate_template}")  # Add this line
+    font_path = os.path.join(app.root_path, 'static', 'fonts', 'arial.ttf')
+
+    # The rest of your existing code...
+
+    font_path = os.path.join(app.root_path, 'static', 'fonts', 'arial.ttf')
+
     try:
-        # Open the certificate template image
         with Image.open(certificate_template) as img:
             draw = ImageDraw.Draw(img)
-            
-            # Define font and font path
-            font_path = 'static/fonts/arial.ttf'
-            font = ImageFont.truetype(font_path, 40)  # Adjust size as necessary
+            font = ImageFont.truetype(font_path, 40)  # Adjust size as needed
 
-            # Define text positions and colors
+            # Define text and draw positions
             text_color = (0, 0, 0)  # Black color for text
-            text_position = (250, 200)  # Adjust as necessary
-            course_position = (250, 300)  # Adjust as necessary
+            text_position = (250, 200)  # Position for "Congratulations!"
+            course_position = (250, 300)  # Position for course title
 
-            # Add course title to the certificate
             draw.text(text_position, "Congratulations!", fill=text_color, font=font)
             draw.text(course_position, f"You have completed {course.title}", fill=text_color, font=font)
 
-            # Save image to a BytesIO object
             img_io = BytesIO()
             img.save(img_io, 'PNG')
             img_io.seek(0)
@@ -87,4 +89,6 @@ def certificate(course_id):
         return f"An error occurred when processing the certificate: {e}", 500
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()  # Create tables if they don't exist
     app.run(debug=True)
