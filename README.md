@@ -59,14 +59,11 @@ Git
 Version control for code management and collaboration.
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![1](https://github.com/user-attachments/assets/e0535b02-1fd6-4cea-92d2-1a587a9068ac)
+![2](https://github.com/user-attachments/assets/d8e227ba-10df-44f1-b55c-1b9468eda420)
+![3](https://github.com/user-attachments/assets/7f13acb6-9e76-43f0-a083-e06f6f3a2a29)
+![4](https://github.com/user-attachments/assets/55cd7525-e5ee-4bad-844e-9aff7093dafa)
+![5](https://github.com/user-attachments/assets/69457d15-1c2c-4589-88d8-b192e4671f24)
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
